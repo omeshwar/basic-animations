@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/animation.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light); //Set Theme as Light
   runApp(Myapp());
 }
 

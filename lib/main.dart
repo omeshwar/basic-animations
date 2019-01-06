@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     animationController =
@@ -77,11 +76,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         animationController2.forward();
-
       }
-      /*else if (status == AnimationStatus.dismissed) {
-        animationController.forward();
-      }*/
     });
 
     animation2.addStatusListener((status) {
@@ -136,21 +131,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           elevation: animation.value,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(34.0)),
-                              child: MaterialButton(
-                                onPressed: () {
-                                  animationController.forward();
-                                },
-                                child: Text(
-                                  "Click Me",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontStyle: FontStyle.italic),
-                                ),
-                                elevation: 30.0,
-                              ),
+                            child: MaterialButton(
+                              onPressed: () {
+                                animationController.forward();
+                              },
+                              elevation: animation.value,
                             ),
                           ),
                         ),

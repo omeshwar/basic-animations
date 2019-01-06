@@ -1,6 +1,6 @@
-# basicsanim
+# basics-animations
 
-A new Flutter application.
+A Basic Flutter Project To Understand the Basics of Animation in Flutter
 
 ## Getting Started
 

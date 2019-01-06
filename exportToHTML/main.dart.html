@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(169,183,198); }
+.s1 { color: rgb(106,135,89); }
+.s2 { color: rgb(204,120,50); }
+.s3 { color: rgb(204,120,50); font-weight: bold; }
+.s4 { color: rgb(104,151,187); }
+.s5 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+main.dart</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0"> 
+import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span><span class="s0"> 
+import </span><span class="s1">'package:flutter/services.dart'</span><span class="s2">;</span><span class="s0"> 
+import </span><span class="s1">'package:flutter/animation.dart'</span><span class="s2">;</span><span class="s0"> 
+ 
+</span><span class="s3">void </span><span class="s0">main() { 
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light)</span><span class="s2">;</span><span class="s0"> 
+  runApp(Myapp())</span><span class="s2">;</span><span class="s0"> 
+} 
+ 
+</span><span class="s3">class </span><span class="s0">Myapp </span><span class="s3">extends </span><span class="s0">StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) { 
+    </span><span class="s3">return </span><span class="s0">MaterialApp( 
+      title: </span><span class="s1">'Animation'</span><span class="s2">,</span><span class="s0"> 
+      debugShowCheckedModeBanner: </span><span class="s3">false</span><span class="s2">,</span><span class="s0"> 
+      home: HomePage()</span><span class="s2">,</span><span class="s0"> 
+    )</span><span class="s2">;</span><span class="s0"> 
+  } 
+} 
+ 
+</span><span class="s3">class </span><span class="s0">HomePage </span><span class="s3">extends </span><span class="s0">StatefulWidget { 
+  @override 
+  _HomePageState createState() =&gt; _HomePageState()</span><span class="s2">;</span><span class="s0"> 
+} 
+ 
+</span><span class="s3">class </span><span class="s0">_HomePageState </span><span class="s3">extends </span><span class="s0">State&lt;HomePage&gt; </span><span class="s3">with </span><span class="s0">TickerProviderStateMixin { 
+   
+  Animation&lt;double&gt; animation</span><span class="s2">;</span><span class="s0"> 
+  Animation&lt;double&gt; animation2</span><span class="s2">;</span><span class="s0"> 
+  Animation&lt;double&gt; animation3</span><span class="s2">;</span><span class="s0"> 
+  Animation&lt;double&gt; animation4</span><span class="s2">;</span><span class="s0"> 
+  AnimationController animationController</span><span class="s2">;</span><span class="s0"> 
+  AnimationController animationController2</span><span class="s2">;</span><span class="s0"> 
+  AnimationController animationController3</span><span class="s2">;</span><span class="s0"> 
+  AnimationController animationController4</span><span class="s2">;</span><span class="s0"> 
+ 
+  int sec = </span><span class="s4">1000</span><span class="s2">;</span><span class="s0"> 
+ 
+  @override 
+  </span><span class="s3">void </span><span class="s0">initState() { 
+    </span><span class="s5">// TODO: implement initState</span><span class="s0"> 
+    </span><span class="s3">super</span><span class="s0">.initState()</span><span class="s2">;</span><span class="s0"> 
+ 
+    animationController = 
+        AnimationController(vsync: </span><span class="s3">this</span><span class="s2">, </span><span class="s0">duration: Duration(milliseconds: </span><span class="s4">400</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+ 
+    animationController2 = 
+        AnimationController(vsync: </span><span class="s3">this</span><span class="s2">, </span><span class="s0">duration: Duration(milliseconds: </span><span class="s4">500</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+ 
+    animationController3 = 
+        AnimationController(vsync: </span><span class="s3">this</span><span class="s2">, </span><span class="s0">duration: Duration(milliseconds: </span><span class="s4">600</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+ 
+    animationController4 = 
+        AnimationController(vsync: </span><span class="s3">this</span><span class="s2">, </span><span class="s0">duration: Duration(milliseconds: </span><span class="s4">700</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation = Tween(begin: </span><span class="s4">30.0</span><span class="s2">, </span><span class="s0">end: </span><span class="s4">0.0</span><span class="s0">).animate(animationController) 
+      ..addListener(() { 
+        setState(() {})</span><span class="s2">;</span><span class="s0"> 
+      })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation2 = Tween(begin: </span><span class="s4">30.0</span><span class="s2">, </span><span class="s0">end: </span><span class="s4">0.0</span><span class="s0">).animate(animationController2) 
+      ..addListener(() { 
+        setState(() {})</span><span class="s2">;</span><span class="s0"> 
+      })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation3 = Tween(begin: </span><span class="s4">30.0</span><span class="s2">, </span><span class="s0">end: </span><span class="s4">0.0</span><span class="s0">).animate(animationController3) 
+      ..addListener(() { 
+        setState(() {})</span><span class="s2">;</span><span class="s0"> 
+      })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation4 = Tween(begin: </span><span class="s4">30.0</span><span class="s2">, </span><span class="s0">end: </span><span class="s4">0.0</span><span class="s0">).animate(animationController4) 
+      ..addListener(() { 
+        setState(() {})</span><span class="s2">;</span><span class="s0"> 
+      })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation.addStatusListener((status) { 
+      </span><span class="s3">if </span><span class="s0">(status == AnimationStatus.completed) { 
+        animationController2.forward()</span><span class="s2">;</span><span class="s0"> 
+ 
+      } 
+      </span><span class="s5">/*else if (status == AnimationStatus.dismissed) { 
+        animationController.forward(); 
+      }*/</span><span class="s0"> 
+    })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation2.addStatusListener((status) { 
+      </span><span class="s3">if </span><span class="s0">(status == AnimationStatus.completed) { 
+        animationController3.forward()</span><span class="s2">;</span><span class="s0"> 
+      } </span><span class="s3">else if </span><span class="s0">(status == AnimationStatus.dismissed) { 
+        animationController.reverse()</span><span class="s2">;</span><span class="s0"> 
+      } 
+    })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation3.addStatusListener((status) { 
+      </span><span class="s3">if </span><span class="s0">(status == AnimationStatus.completed) { 
+        animationController4.forward()</span><span class="s2">;</span><span class="s0"> 
+      } </span><span class="s3">else if </span><span class="s0">(status == AnimationStatus.dismissed) { 
+        animationController2.reverse()</span><span class="s2">;</span><span class="s0"> 
+      } 
+    })</span><span class="s2">;</span><span class="s0"> 
+ 
+    animation4.addStatusListener((status) { 
+      </span><span class="s3">if </span><span class="s0">(status == AnimationStatus.completed) { 
+        animationController4.reverse()</span><span class="s2">;</span><span class="s0"> 
+      } </span><span class="s3">else if </span><span class="s0">(status == AnimationStatus.dismissed) { 
+        animationController3.reverse()</span><span class="s2">;</span><span class="s0"> 
+      } 
+    })</span><span class="s2">;</span><span class="s0"> 
+  } 
+ 
+  @override 
+  Widget build(BuildContext context) { 
+    </span><span class="s3">return </span><span class="s0">Scaffold( 
+        appBar: AppBar( 
+          title: Text(</span><span class="s1">&quot;Come On&quot;</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+        )</span><span class="s2">,</span><span class="s0"> 
+        body: Center( 
+          child: Container( 
+            width: (MediaQuery.of(context).size.width - </span><span class="s4">100</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+            height: </span><span class="s4">300</span><span class="s2">,</span><span class="s0"> 
+            child: Card( 
+              elevation: animation4.value</span><span class="s2">,</span><span class="s0"> 
+              child: Padding( 
+                padding: EdgeInsets.all(</span><span class="s4">25</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                child: Card( 
+                  elevation: animation3.value</span><span class="s2">,</span><span class="s0"> 
+                  child: Padding( 
+                    padding: EdgeInsets.all(</span><span class="s4">30</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                    child: Card( 
+                      elevation: animation2.value</span><span class="s2">,</span><span class="s0"> 
+                      child: Padding( 
+                        padding: EdgeInsets.only( 
+                            left: </span><span class="s4">30</span><span class="s2">, </span><span class="s0">right: </span><span class="s4">30</span><span class="s2">, </span><span class="s0">top: </span><span class="s4">40</span><span class="s2">, </span><span class="s0">bottom: </span><span class="s4">40</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                        child: Card( 
+                          elevation: animation.value</span><span class="s2">,</span><span class="s0"> 
+                          child: Padding( 
+                            padding: </span><span class="s3">const </span><span class="s0">EdgeInsets.all(</span><span class="s4">8.0</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                            child: Container( 
+                              decoration: BoxDecoration( 
+                                  borderRadius: BorderRadius.circular(</span><span class="s4">34.0</span><span class="s0">))</span><span class="s2">,</span><span class="s0"> 
+                              child: MaterialButton( 
+                                onPressed: () { 
+                                  animationController.forward()</span><span class="s2">;</span><span class="s0"> 
+                                }</span><span class="s2">,</span><span class="s0"> 
+                                child: Text( 
+                                  </span><span class="s1">&quot;Click Me&quot;</span><span class="s2">,</span><span class="s0"> 
+                                  style: TextStyle( 
+                                      color: Colors.black</span><span class="s2">,</span><span class="s0"> 
+                                      fontStyle: FontStyle.italic)</span><span class="s2">,</span><span class="s0"> 
+                                )</span><span class="s2">,</span><span class="s0"> 
+                                elevation: </span><span class="s4">30.0</span><span class="s2">,</span><span class="s0"> 
+                              )</span><span class="s2">,</span><span class="s0"> 
+                            )</span><span class="s2">,</span><span class="s0"> 
+                          )</span><span class="s2">,</span><span class="s0"> 
+                        )</span><span class="s2">,</span><span class="s0"> 
+                      )</span><span class="s2">,</span><span class="s0"> 
+                    )</span><span class="s2">,</span><span class="s0"> 
+                  )</span><span class="s2">,</span><span class="s0"> 
+                )</span><span class="s2">,</span><span class="s0"> 
+              )</span><span class="s2">,</span><span class="s0"> 
+            )</span><span class="s2">,</span><span class="s0"> 
+          )</span><span class="s2">,</span><span class="s0"> 
+        ))</span><span class="s2">;</span><span class="s0"> 
+  } 
+} 
+</span></pre>
+</body>
+</html>
